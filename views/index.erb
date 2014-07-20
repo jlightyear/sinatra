@@ -1,0 +1,22 @@
+<html>
+	<body>
+		Today is: <%= Date.today %>
+		<br />
+		<br />
+		<form action="/add_task" method="post" >
+			Add a task: <input type="text" name="task" value="" />
+			<input type="submit" value="submit" />	
+		</form>
+		<form action="/remove_task" method="post">
+			<% @task_array.each do |task| %>
+			<br />
+			<input type="checkbox" name="<%= @i %>" /><%= task %>
+			<% @i+= 1 %>
+			<% end %>
+			<br />
+			<input type="submit" value="Delete" />
+		</form>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="/js/script.js"></script>
+	</body>
+</html>
